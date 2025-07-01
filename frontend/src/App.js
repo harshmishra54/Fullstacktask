@@ -16,6 +16,7 @@ import AdminProjects from './components/AdminProjects';
 import AdminClients from './components/AdminClients';
 import AdminContacts from './components/AdminContacts';
 import AdminSubscribers from './components/AdminSubscribers';
+import AdminDashboard from './components/AdminDashboard';
 
 function App() {
   return (
@@ -36,7 +37,18 @@ function App() {
           }
         />
 
-        {/* Admin Panel Routes */}
+        {/* Admin Dashboard */}
+        <Route
+          path="/admin"
+          element={
+            <>
+              <AdminNavbar />
+              <AdminDashboard />
+            </>
+          }
+        />
+
+        {/* Admin Sections */}
         <Route
           path="/admin/projects"
           element={

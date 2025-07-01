@@ -60,12 +60,18 @@ const Footer = () => {
       <div className="footer-bottom bg-black text-white text-center py-3">
         <div className="container d-flex flex-column flex-md-row justify-content-between align-items-center">
           <p className="mb-2 mb-md-0">All Rights Reserved © 2023</p>
+
           <img src="/assets/logo.svg" alt="Logo" height="20" />
-          <div className="social-icons d-flex gap-3 mt-2 mt-md-0">
-            <img src="/assets/Frame.svg" alt="Facebook" height="20" />
-            <img src="/assets/Group.svg" alt="Instagram" height="20" />
-            <img src="/assets/Group-1.svg" alt="Twitter" height="20" />
-            <img src="/assets/Linkedin.svg" alt="LinkedIn" height="20" />
+
+          <div className="d-flex flex-column flex-md-row align-items-center gap-3 mt-2 mt-md-0">
+            <div className="social-icons d-flex gap-3">
+              <img src="/assets/Frame.svg" alt="Facebook" height="20" />
+              <img src="/assets/Group.svg" alt="Instagram" height="20" />
+              <img src="/assets/Group-1.svg" alt="Twitter" height="20" />
+              <img src="/assets/Linkedin.svg" alt="LinkedIn" height="20" />
+            </div>
+            {/* ✅ Admin Panel Button */}
+            <a href="/admin" className="btn btn-outline-light btn-sm">Go to Admin Panel</a>
           </div>
         </div>
       </div>
