@@ -1,0 +1,182 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+section {
+  padding: 60px 0;
+}
+
+.section-heading {
+  font-weight: 600;
+  color: #003366;
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+/* Navbar */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+/* Hero Section */
+.hero-container {
+  padding: 100px 0;
+  background-size: cover;
+  background-position: center;
+}
+
+.hero-heading {
+  font-size: 48px;
+  font-weight: bold;
+  line-height: 1.3;
+}
+
+.hero-form-box {
+  background-color: #1f2c5c;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
+
+.hero-form-box h4 {
+  color: white;
+  font-size: 20px;
+}
+
+.form-dark {
+  background-color: transparent;
+  border: 1px solid #ccc;
+  color: white;
+}
+
+.form-dark::placeholder {
+  color: #ccc;
+}
+
+.btn-orange {
+  background-color: #d94c14;
+  color: white;
+  font-weight: bold;
+  border: none;
+  padding: 10px 0;
+}
+
+.btn-orange:hover {
+  background-color: #b33f10;
+}
+
+/* Middle Section */
+.middle-section {
+  background-color: #f5f8fc;
+}
+
+.circle-img {
+  width: 75px;
+  height: 75px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* Why Choose Us Icons */
+.middle-section img[alt*="ROI"],
+.middle-section img[alt*="Design"],
+.middle-section img[alt*="Marketing"] {
+  margin-bottom: 10px;
+}
+
+/* About Images */
+.about-img {
+  width: 200px;
+  height: 130px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* Projects Section */
+.projects-section .card {
+  border: none;
+}
+
+.projects-section .card-img-top {
+  height: 150px;
+  object-fit: cover;
+  border-radius: 6px 6px 0 0;
+}
+
+.projects-section .btn-orange {
+  font-size: 13px;
+  padding: 6px 12px;
+}
+
+/* Clients Section */
+.clients-section .card {
+  border: none;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
+}
+
+.clients-section .card p {
+  font-size: 14px;
+  line-height: 1.4;
+  color: #555;
+}
+
+/* Footer */
+.footer-cta {
+  background-size: cover;
+  background-position: center;
+  padding: 60px 20px;
+}
+
+.footer-bar {
+  background-color: #0d47a1;
+  color: white;
+}
+
+.footer-bar input {
+  border-radius: 4px;
+  padding: 5px 10px;
+  font-size: 14px;
+}
+
+.footer-bar button {
+  font-size: 14px;
+  padding: 6px 12px;
+}
+
+.footer-bottom {
+  background-color: #111;
+  color: white;
+  font-size: 14px;
+}
+
+.footer-bottom .social-icons img {
+  filter: brightness(0) invert(1);
+  cursor: pointer;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero-heading {
+    font-size: 32px;
+    text-align: center;
+  }
+
+  .hero-form-box {
+    margin-top: 30px;
+  }
+
+  .about-img {
+    width: 100%;
+  }
+
+  .circle-img {
+    width: 60px;
+    height: 60px;
+  }
+}
