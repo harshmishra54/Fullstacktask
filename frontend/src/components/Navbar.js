@@ -1,12 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import logo from '/assets/logo.svg';
 
 const Navbar = () => {
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-white px-4 shadow-sm">
       <Link className="navbar-brand fw-bold text-primary" to="/">
-        <img src={logo} alt="Logo" height="30" />
+        <img src="/assets/logo.svg" alt="Logo" height="30" />
       </Link>
       <button
         className="navbar-toggler"
@@ -21,7 +20,7 @@ const Navbar = () => {
       </button>
 
       <div className="collapse navbar-collapse justify-content-end" id="navbarContent">
-        <ul className="navbar-nav gap-3">
+        <ul className="navbar-nav gap-3 text-center">
           <li className="nav-item">
             <a className="nav-link" href="#home">Home</a>
           </li>
