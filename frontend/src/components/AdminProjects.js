@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 
+const API_BASE = process.env.REACT_APP_API_BASE;
+
 const AdminProjects = () => {
   const [projects, setProjects] = useState([]);
   const [form, setForm] = useState({
@@ -15,7 +17,7 @@ const AdminProjects = () => {
 
   const fetchProjects = async () => {
     try {
-      const res = await axios.get('http://localhost:5000/api/projects');
+      const res = await axios.get(`${API_BASE}/api/projects`);
       setProjects(res.data);
     } catch (err) {
       console.error('Error fetching projects:', err);
@@ -42,7 +44,7 @@ const AdminProjects = () => {
     data.append('image', form.image);
 
     try {
-      await axios.post('http://localhost:5000/api/projects', data, {
+      await axios.post(`${API_BASE}/api/projects`, data, {
         headers: { 'Content-Type': 'multipart/form-data' }
       });
       alert('Project added!');
@@ -88,7 +90,7 @@ const AdminProjects = () => {
           <div className="col-md-3 mb-3" key={index}>
             <div className="card">
               <img
-                src={`http://localhost:5000/uploads/${proj.image}`}
+                src={`${API_BASE}/uploads/${proj.image}`}
                 alt={proj.name}
                 className="card-img-top"
                 style={{ height: '150px', objectFit: 'cover' }}

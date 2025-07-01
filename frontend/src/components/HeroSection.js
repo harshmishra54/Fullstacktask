@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 
+const API_BASE = process.env.REACT_APP_API_BASE;
+
 const HeroSection = () => {
   const [formData, setFormData] = useState({
     fullName: '',
@@ -19,7 +21,7 @@ const HeroSection = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post('http://localhost:5000/api/contact', formData);
+      await axios.post(`${API_BASE}/api/contact`, formData);
       alert('Your request has been submitted!');
       setFormData({ fullName: '', email: '', mobile: '', city: '' });
     } catch (err) {

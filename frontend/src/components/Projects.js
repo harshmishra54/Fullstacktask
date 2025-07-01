@@ -1,12 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 
+const API_BASE = process.env.REACT_APP_API_BASE;
+
 const Projects = () => {
   const [projects, setProjects] = useState([]);
 
   useEffect(() => {
     axios
-      .get('http://localhost:5000/api/projects')
+      .get(`${API_BASE}/api/projects`)
       .then((res) => setProjects(res.data))
       .catch((err) => console.error('Error fetching projects:', err));
   }, []);
@@ -23,7 +25,7 @@ const Projects = () => {
             <div className="col-md-2 m-2" key={i}>
               <div className="card shadow-sm">
                 <img
-                  src={`http://localhost:5000/uploads/${project.image}`}
+                  src={`${API_BASE}/uploads/${project.image}`}
                   alt={project.name}
                   className="card-img-top"
                   style={{ height: '150px', objectFit: 'cover' }}

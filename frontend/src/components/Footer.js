@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import './LandingPage.css';
 
+const API_BASE = process.env.REACT_APP_API_BASE;
+
 const Footer = () => {
   const [email, setEmail] = useState('');
 
@@ -9,7 +11,7 @@ const Footer = () => {
     e.preventDefault();
     if (!email) return alert('Please enter a valid email address.');
     try {
-      await axios.post('http://localhost:5000/api/newsletter', { email });
+      await axios.post(`${API_BASE}/api/newsletter`, { email });
       alert('Subscribed successfully!');
       setEmail('');
     } catch (error) {
@@ -70,7 +72,6 @@ const Footer = () => {
               <img src="/assets/Group-1.svg" alt="Twitter" height="20" />
               <img src="/assets/Linkedin.svg" alt="LinkedIn" height="20" />
             </div>
-            {/* ✅ Admin Panel Button */}
             <a href="/admin" className="btn btn-outline-light btn-sm">Go to Admin Panel</a>
           </div>
         </div>

@@ -1,12 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 
+const API_BASE = process.env.REACT_APP_API_BASE;
+
 const Clients = () => {
   const [clients, setClients] = useState([]);
 
   useEffect(() => {
     axios
-      .get('http://localhost:5000/api/clients')
+      .get(`${API_BASE}/api/clients`)
       .then((res) => setClients(res.data))
       .catch((err) => console.error('Error fetching clients:', err));
   }, []);
@@ -20,7 +22,7 @@ const Clients = () => {
             <div className="col-md-2 m-2" key={i}>
               <div className="card p-3">
                 <img
-                  src={`http://localhost:5000/uploads/${client.image}`}
+                  src={`${API_BASE}/uploads/${client.image}`}
                   className="rounded-circle mx-auto mb-3"
                   height="60"
                   width="60"

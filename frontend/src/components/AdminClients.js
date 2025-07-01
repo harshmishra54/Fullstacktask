@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 
+const API_BASE = process.env.REACT_APP_API_BASE;
+
 const AdminClients = () => {
   const [clients, setClients] = useState([]);
   const [form, setForm] = useState({
@@ -10,14 +12,13 @@ const AdminClients = () => {
     image: null
   });
 
-  // Fetch clients from backend on load
   useEffect(() => {
     fetchClients();
   }, []);
 
   const fetchClients = async () => {
     try {
-      const res = await axios.get('http://localhost:5000/api/clients');
+      const res = await axios.get(`${API_BASE}/api/clients`);
       setClients(res.data);
     } catch (err) {
       console.error('Error fetching clients:', err);
@@ -45,7 +46,7 @@ const AdminClients = () => {
     data.append('image', form.image);
 
     try {
-      await axios.post('http://localhost:5000/api/clients', data, {
+      await axios.post(`${API_BASE}/api/clients`, data, {
         headers: { 'Content-Type': 'multipart/form-data' }
       });
       alert('Client added successfully!');
@@ -98,7 +99,7 @@ const AdminClients = () => {
           <div className="col-md-3 mb-3" key={i}>
             <div className="card p-2 text-center">
               <img
-                src={`http://localhost:5000/uploads/${client.image}`}
+                src={`${API_BASE}/uploads/${client.image}`}
                 alt={client.name}
                 className="rounded-circle mx-auto mb-2"
                 style={{ width: '60px', height: '60px', objectFit: 'cover' }}
